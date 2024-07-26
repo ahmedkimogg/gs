@@ -25,4 +25,4 @@ jobs:
         run: chmod 777 UDPBYPASS
 
       - name: Run UDPBYPASS
-        run: ./UDPBYPASS 102.210.254.164 53
+        run: ./UDPBYPASS 45.82.122.95 27015
